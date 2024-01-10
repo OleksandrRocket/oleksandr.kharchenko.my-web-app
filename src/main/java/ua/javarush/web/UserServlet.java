@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/users")
-public class UserServlet extends HttpServlet {
+public class  UserServlet extends HttpServlet {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServlet.class);
     private static Integer USER_ID_COUNTER = 1;
