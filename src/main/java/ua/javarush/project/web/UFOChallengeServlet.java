@@ -1,7 +1,6 @@
 package ua.javarush.project.web;
 
-import ua.javarush.project.AcceptUfoChallengeService;
-import ua.javarush.project.answers.UFOAnswer;
+import ua.javarush.project.answers.CreatorOfGames;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,17 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/ufo")
+@WebServlet("/challengePage")
 public class UFOChallengeServlet extends HttpServlet {
 
-    private AcceptUfoChallengeService acceptUfoChallengeService = new AcceptUfoChallengeService();
 
+private CreatorOfGames creatorOfGames = new CreatorOfGames();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UFOAnswer answer = acceptUfoChallengeService.call(Boolean.parseBoolean(req.getParameter("answer")));
-
+        String value = req.getParameter("value");
+        creatorOfGames.createGame(value);
         resp.setStatus(200);
-        req.setAttribute("answer", answer.getMessage());
-        req.getRequestDispatcher(answer.getPage()).forward(req, resp);
     }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+         req.getRequestDispatcher("challengePage.jsp").forward(req, resp);
+     }
+
 }

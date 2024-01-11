@@ -2,7 +2,7 @@ package ua.javarush.repository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ua.javarush.models.User;
+import ua.javarush.model.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
