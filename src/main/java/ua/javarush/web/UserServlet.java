@@ -2,7 +2,7 @@ package ua.javarush.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ua.javarush.models.User;
+import ua.javarush.model.User;
 import ua.javarush.repository.UserRepository;
 import ua.javarush.service.UserService;
 

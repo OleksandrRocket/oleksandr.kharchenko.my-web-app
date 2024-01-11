@@ -1,4 +1,4 @@
-package ua.javarush.models;
+package ua.javarush.model;
 
 import java.util.Objects;
 
